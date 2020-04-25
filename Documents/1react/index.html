@@ -1,0 +1,87 @@
+<head>
+	<style>
+		.container {
+			font-size: 3rem;
+		}
+	</style>
+</head>
+<body>
+	<!--<div>Hello World</div> -->
+	<div id="root"></div>
+
+	<!--para tener disponible REACT en este doc-->
+	<script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+     <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>    
+
+    
+	<script type="text/babel">
+		const rootElement = document.getElementById('root');
+
+
+		//const elementDOM = document.createElement('div');
+		//elementDOM.textContent = "Hello World";
+		//elementDOM.className = 'container';
+
+		//rootElement.appendChild(elementDOM);
+
+		//console.log(elementDOM);
+
+		
+		//const elementReact = React.createElement(
+		//	'div',
+		//	{
+		//		className: 'container',
+		//		childen: 'Hello World',
+		//	},
+		//	'Hello World',
+
+		//);
+
+		
+
+		//console.log(elementReact);
+
+
+
+        const children = "Hello World";
+        const className = "container";
+
+        const props = {
+            children: "Hello World",
+            className: 'container',
+        }
+
+
+        const Box = (props) => {
+            return (
+                   <div className="container2" {...props} />
+            )
+        }
+
+
+        Box.propTypes = {
+            greting: PropTypes.string.isRequired,
+            children: PropTypes.string,
+        } 
+
+
+		const elementJSX = (
+            <>
+                <Box className="container" greeting ="hola">Hello world</Box>
+            </>
+
+		);
+
+
+
+		ReactDOM.render(elementJSX, rootElement);
+	</script>
+	
+</body>
+
+
+
+
+
